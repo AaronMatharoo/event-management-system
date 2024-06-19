@@ -1,0 +1,25 @@
+{
+  "name": "event-management-system",
+  "plugins": [
+    {
+      "name": "TailwindCSS",
+      "description": "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
+      "url": "https://tailwindcss.com/docs"
+    },
+    {
+      "name": "CSS / styled-jsx",
+      "description": "CRA comes with built-in support for CSS and CSS Modules.",
+      "url": "https://create-react-app.dev/docs/adding-a-stylesheets"
+    },
+    {
+      "name": "eslint",
+      "description": "",
+      "url": ""
+    },
+    {
+      "name": "jest",
+      "description": "",
+      "url": ""
+    }
+  ]
+}
