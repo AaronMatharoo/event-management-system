@@ -1,32 +1,22 @@
 const express = require("express");
 const cors = require("cors");
-const { Client } = require("pg");
+const registerRoute = require("./routes/register");
+const loginRoute = require("./routes/login");
+const eventsRoute = require("./routes/events");
+const authenticateJWT = require("./middleware/authenticateJWT");
 
+//create express instance
 const app = express();
-
+//CORS to allow cross-origin requests
 app.use(cors());
+//parse incoming requests with JSON
 app.use(express.json());
 
-const client = new Client({
-  connectionString:
-    "postgresql://postgres:TfkcIr4kCyXejVhU@furtively-closing-planthopper.data-1.use1.tembo.io:5432/postgres",
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
-
-client.connect((err) => {
-  if (err) {
-    console.error("Could not connect to PostgreSQL", err);
-  } else {
-    console.log("Connected to PostgreSQL");
-  }
-});
-
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
+//define routes
+app.use("/register", registerRoute);
+app.use("/login", loginRoute);
+//events endpoint is protected with JWT Auth
+app.use("/events", authenticateJWT, eventsRoute);
 
 const PORT = 1337;
-
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
