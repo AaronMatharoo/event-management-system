@@ -1,24 +1,32 @@
-# Event Management System
+# Demonstration of Advanced Application Security Practices
 
-This is an Event Management System designed to allow for user registration, user login, viewing events, creating events, and joining events as long as the date of the event has not passed. 
+This Secure Event Management System is designed with a focus on Application Security and Security-By-Design Development, ensuring safe user interactions and data integrity throughout the lifecycle of event management. The system supports secure user registration, authentication, event viewing, creation, and participation, all while enforcing stringent security practices.
+
+## Key Security Features
+
+- **React with Built-in Protections**: Leveraging React's inherent defense mechanisms, such as automatic escaping of potentially harmful data, reduces the risk of Cross-Site Scripting (XSS) attacks, providing a safer user experience.
+- **Protected Routes and Endpoints**: Sensitive operations are guarded using Protected Routes in React, ensuring only authenticated users can access them. On the backend, endpoints are secured with JSON Web Tokens (JWTs) to prevent unauthorized access.
+- **Secure Authentication with JWTs**: User sessions are managed with JWTs, which are securely generated and validated on every request to protect against tampering and session hijacking.
+- **Data Integrity with SQL**: Utilizing a PostgreSQL Database-as-a-Service, we can ensure data integrity and reliability, with inherent protections against SQL Injection attacks.
+- **Sensitive Data Handling**: Though some keys are hardcoded for this demonstration, in a production environment, secure storage practices such as environment variables and secret management tools would be employed.
 
 ## Getting Started
 
 ### Installation
 
-1. Clone the project repository to your local machine:
+1. Clone the secure project repository to your local machine:
 
     ```bash
-    git clone https://github.com/AaronMatharoo/event-management-system.git
+    git clone https://github.com/AaronMatharoo/secure-event-management-system.git
     ```
 
-2. In the root of the project, navigate to the `client` directory:
+2. Navigate to the `client` directory:
 
     ```bash
     cd client
     ```
 
-3. Install dependencies for the frontend:
+3. Install dependencies for the secure frontend:
 
     ```bash
     npm install
@@ -30,7 +38,7 @@ This is an Event Management System designed to allow for user registration, user
     cd ../server
     ```
 
-5. Install dependencies for the backend:
+5. Install dependencies for the secure backend:
 
     ```bash
     npm install
@@ -38,7 +46,7 @@ This is an Event Management System designed to allow for user registration, user
 
 ### Running the Development Server
 
-1. Start the frontend development server. Navigate to the `client` directory if you're not already there:
+1. Start the secure frontend development server. Navigate to the `client` directory if you're not already there:
 
     ```bash
     cd ../client
@@ -50,7 +58,7 @@ This is an Event Management System designed to allow for user registration, user
     npm run dev
     ```
 
-3. Start the backend server. Navigate to the `server` directory:
+3. Start the secure backend server. Navigate to the `server` directory:
 
     ```bash
     cd ../server
@@ -62,8 +70,20 @@ This is an Event Management System designed to allow for user registration, user
     npm run start
     ```
 
-Once both the frontend and backend servers are running, you can access the Event Management System through your web browser at the specified address (`http://localhost:3000/`)
+Once both servers are running, the Secure Event Management System can be accessed through your web browser at `http://localhost:3000/`.
 
-## Brief Documentation
+## Secure System Architecture
 
-In developing the Event Management System, design choices focused on project guidelines and suitability for such an application. Given the event system's nature, data integrity is crucial, so SQL was chosen for its reliability. Specifically, Neon, a PostgreSQL Database-As-A-Service, was utilized for storing events and registrations under its free tier. This was seen as a PostgreSQL version of the popular MongoDB Atlas. Custom RESTful APIs were developed in Node.js with Express.js for event and user management. JSONWebTokens (JWTs) were employed for user authentication, securing event routes and endpoints for logged-in users. The Front-End utilized React and TailwindCSS to create modular components and an intuitive, responsive interface for all device sizes. Although Unit-Testing was omitted due to time constraints, manual testing ensured system-wide functionality and stability. Notably, to simplify the evaluation process, certain design choices were made, like hardcoding keys and configurations in the codebase. While this is acceptable for assessment purposes, in a production environment, storing sensitive information securely is imperative to prevent unauthorized access and mitigate risks. Nonetheless, for assessment purposes, hardcoded keys streamline the evaluation process without compromising the objectives of this test. It is imperative to keep this context in mind while reviewing the code. Additionally, some assumptions that were made during development were that this was not an application that would be deployed to production, using a Database-As-A-Service was acceptable, and that Unit Tests were a bonus point, and not a core requirement of the assessment. Overall, I believe this project showcases my proficiency in Full-Stack Development given the quality of both frontend and backend components, the appropriate selection and implementation of the database, and the successful creation of a fully functional and reliable system.
+The Secure Event Management System has been architected with security as the top priority, incorporating industry best practices:
+
+- **Frontend Security with React**: React's ecosystem naturally mitigates common web vulnerabilities like XSS. Every user input and dynamic content is automatically sanitized before rendering, reducing the risk of malicious script execution.
+  
+- **Backend Security with Express and JWTs**: The backend, built on Node.js with Express, is fortified with JWT-based authentication. Each request to protected endpoints is verified against an encrypted token, ensuring that only authenticated users can access sensitive data or actions.
+
+- **Database Security**: Data persistence is handled by Neon, ensuring that all event and user data is stored in a secure, reliable SQL environment. SQL’s inherent protections are supplemented by prepared statements and query parameterization, defending against SQL injection attacks.
+
+- **API Security**: Custom RESTful APIs are designed to validate and sanitize input, enforce strong authentication, and protect against common web vulnerabilities.
+
+## Conclusion
+
+This Secure Event Management System is a testament to Application Security, Security-By-Design Development, and Full-Stack Development. By emphasizing security from the ground up, this project demonstrates how to deliver secure and reliable software solutions, ensuring the protection of user data and integrity of operations.
