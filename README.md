@@ -1,6 +1,6 @@
 # Demonstration of Advanced Application Security Practices
 
-This Secure Event Management System is designed with a focus on Application Security and Security-By-Design Development, ensuring safe user interactions and data integrity throughout the lifecycle of event management. The system supports secure user registration, authentication, event viewing, creation, and participation, all while enforcing stringent security practices.
+This Secure Event Management System is designed with a focus on Application Security and Security-By-Design Development, ensuring safe user interactions and data integrity throughout the lifecycle of event management. The system supports secure user registration, authentication, event viewing, creation, and participation, all while enforcing best security practices.
 
 ## Key Security Features
 
